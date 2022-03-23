@@ -19,22 +19,22 @@ For more information on Lando see [their docs](https://docs.lando.dev/).
 # Tooling
 Some tooling is built in to avoid having to SSH into container services by piping
 them the `lando` command from the host machine.
-###node 
+### node 
 Runs from the appserver service with `lando node`
 
-###npm 
+### npm 
 Runs from the appserver service with `lando npm`
 
-###npx 
+### npx 
 Runs from the appserver service with `lando npx`
 
-###truffle 
+### truffle 
 Runs from the appserver service with `lando truffle`
 
-###ganache-cli 
+### ganache-cli 
 Runs from the appserver service with `lando ganache-cli`
 
-###nx 
+### nx 
 Runs from the remix service with `lando nx
 
 # Services
