@@ -1,0 +1,39 @@
+name: evm
+proxy:
+  appserver:
+    - evm.lndo.site
+  remix:
+    - evm.lndo.site:8080
+services:
+  appserver:
+    type: node:16
+    install_dependencies_as_me:
+      - npm install -g npm
+      - npm install -g ganache-cli truffle
+  remix:
+    type: node:14
+    port: '8080'
+    webroot: remix-project
+    install_dependencies_as_me:
+      - npm install -g @nrwl/cli
+    build:
+      - git clone https://github.com/ethereum/remix-project.git
+      - cd remix-project && npm install
+      - cd remix-project && npm run build:libs
+      - cd remix-project && nx build
+    command: cd remix-project && nx serve
+    excludes:
+      - remix-project
+tooling:
+  node:
+    service: appserver
+  npm:
+    service: appserver
+  npx:
+    service: appserver
+  truffle:
+    service: appserver
+  ganache-cli:
+    service: appserver
+  nx:
+    service: remix
