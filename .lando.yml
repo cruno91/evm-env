@@ -22,8 +22,6 @@ services:
       - cd remix-project && npm run build:libs
       - cd remix-project && nx build
     command: cd remix-project && nx serve
-    excludes:
-      - remix-project
 tooling:
   node:
     service: appserver
@@ -37,3 +35,5 @@ tooling:
     service: appserver
   nx:
     service: remix
+excludes:
+  - remix-project
