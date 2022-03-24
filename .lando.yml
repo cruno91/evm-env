@@ -14,15 +14,13 @@ services:
     type: node:14
     port: '8080'
     webroot: remix-project
-    install_dependencies_as_me:
-      - npm install -g @nrwl/cli
-      - npm install -g nx
     build:
+      - npm install -g @nrwl/cli
       - git clone https://github.com/ethereum/remix-project.git
-      - cd remix-project && npm install
-      - cd remix-project && npm run build:libs
-      - cd remix-project && nx build
-      - cd remix-project && nx format
+      - cd /app/remix-project && npm install
+      - cd /app/remix-project && npm run build:libs
+      - cd /app/remix-project && nx build
+      - cd /app/remix-project && nx format
     command: cd remix-project && nx serve
 tooling:
   node:
