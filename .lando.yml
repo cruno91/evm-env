@@ -35,5 +35,6 @@ tooling:
     service: appserver
   nx:
     service: remix
+    dir: /app/remix-project
 excludes:
   - remix-project
