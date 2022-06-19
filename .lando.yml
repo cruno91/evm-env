@@ -15,13 +15,13 @@ services:
     port: '8080'
     webroot: remix-project
     build:
-      - npm install -g @nrwl/cli
+      - npm install -g yarn
+      - yarn global add @nrwl/cli
       - git clone https://github.com/ethereum/remix-project.git
-      - cd /app/remix-project && npm install
-      - cd /app/remix-project && npm run build:libs
+      - cd /app/remix-project && yarn install
+      - cd /app/remix-project && yarn run build:libs
       - cd /app/remix-project && nx build
-      - cd /app/remix-project && nx format
-    command: cd remix-project && nx serve
+    command: cd /app/remix-project && nx serve
 tooling:
   node:
     service: appserver
@@ -36,5 +36,6 @@ tooling:
   nx:
     service: remix
     dir: /app/remix-project
-excludes:
-  - remix-project
+  yarn:
+    service: remix
+    dir: /app/remix-project
