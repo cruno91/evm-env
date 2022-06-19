@@ -20,8 +20,8 @@ services:
       - git clone https://github.com/ethereum/remix-project.git
       - cd /app/remix-project && yarn install
       - cd /app/remix-project && yarn run build:libs
-      - cd /app/remix-project && nx build
-    command: cd /app/remix-project && nx serve
+      - cd /app/remix-project && npx nx build
+    command: cd /app/remix-project && npx nx serve
 tooling:
   node:
     service: appserver
@@ -36,6 +36,7 @@ tooling:
   nx:
     service: remix
     dir: /app/remix-project
+    command: npx nx
   yarn:
     service: remix
     dir: /app/remix-project
