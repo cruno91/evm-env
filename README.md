@@ -35,15 +35,24 @@ Runs from the appserver service with `lando truffle`
 Runs from the appserver service with `lando ganache-cli`
 
 ### nx 
-Runs from the remix service with `lando nx
+Runs from the remix service with `lando nx`
+
+### yarn
+Runs from the remix service with `lando yarn`
 
 # Services
 
 ### appserver
+
+> evm.lndo.site
+
 Where most of your code will probably live.  It runs on NodeJS version 
 16 and contains the tools for npm, truffle, and ganache-cli out of the box.
 
 ### remix
+
+> remix.evm.lndo.site
+
 Where most of your development will probably occur.  It runs on NodeJS version
 14, which is the requirements for 
 [Remix IDE](https://github.com/ethereum/remix-project).  
